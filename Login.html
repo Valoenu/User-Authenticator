@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="box">
+  <h1>Login</h1>
+  <!-- We can add some Flashing Message to improve user experiance and display feedback -->
+  {% with message = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+       <p>{{ message }}</p>
+      {% endfor %}
+    {% endlif %}    <!-- end of ours loops -->
+  {% endwith %}
+  
+  <form method="post">
+    <input type="text" name="email" placeholder="Email" required="required" />
+    <input
+      type="password"
+      name="password"
+      placeholder="Password"
+      required="required"
+    />
+    <button type="submit" class="btn btn-primary btn-block btn-large">
+      Button Text.
+    </button>
+  </form>
+</div>
+
+{% endblock %}

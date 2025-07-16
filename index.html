@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="box">
+  <h1>Flask Authentication</h1>
+  
+  {% if not logged_in: %}
+  <a href="{{ url_for('login') }}" class="btn btn-primary btn-block btn-large"
+    >Login</a
+  >
+  <a
+    href="{{ url_for('register') }}"
+    class="btn btn-secondary btn-block btn-large"
+    >Register</a
+  >
+  <!-- Feedback for authenticated users (something like 'you're already logged in') -->
+  {% else %}
+  <p>You are already logged in</p>
+  {% endif %}
+  
+</div>
+
+{% endblock %}
